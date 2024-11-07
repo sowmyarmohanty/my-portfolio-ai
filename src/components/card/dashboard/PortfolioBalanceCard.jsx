@@ -432,8 +432,8 @@ const PortfolioBalanceCard = () => {
                             width: '150px',
                         }}
                     >
-                        <Typography variant="h6" component="div" sx={{ fontSize: '1.1rem', fontWeight: 'bold', mr: 6 }}>
-                        र 36,577.2
+                        <Typography variant="h6" component="div" sx={{ fontSize: '1.1rem', fontWeight: 'bold', mr: 4 }}>
+                        र36,577.2
                         </Typography>
                         <Box
                             sx={{
@@ -444,7 +444,7 @@ const PortfolioBalanceCard = () => {
                             }}
                         >
                             <Typography variant="subtitle2" component="div" sx={{ fontWeight: 'bold', mr: 4 }}>
-                            र 682.5
+                            र682.5
                             </Typography>
                             <ArrowUpwardIcon />
                             <Typography variant="subtitle2" component="div" >
