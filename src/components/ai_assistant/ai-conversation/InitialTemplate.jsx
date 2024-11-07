@@ -1,9 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import { Box, Grid2 as Grid, Typography, Paper, Button } from '@mui/material';
-import EastIcon from '@mui/icons-material/East';
-// import { Button } from 'components/shared/buttons';
-import CallMadeIcon from '@mui/icons-material/CallMade';
+import { Box, Grid2 as Grid, Typography, Paper } from '@mui/material';
 // Styles
 const styles = {
   gridBox: {
@@ -37,8 +34,6 @@ const styles = {
 // Animations
 const CustomPaper = motion(Paper);
 const CustomGrid = motion(Grid);
-const CustomCallIcon = motion(CallMadeIcon);
-const CustomEastIcon = motion(EastIcon);
 
 
 const paperAnimation = {

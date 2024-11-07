@@ -4,20 +4,10 @@ import {
   Toolbar,
   Typography,
   Button,
-  Container,
   Box,
 } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
-  const { logout } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    await logout();
-    navigate("/login");
-  };
   const columns = [
     { field: "id", headerName: "ID", width: 100 },
     { field: "name", headerName: "Name", width: 150 },

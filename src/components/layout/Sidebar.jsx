@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/system';
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, Divider, IconButton, Typography } from '@mui/material';
+import { Drawer, List, ListItem, ListItemIcon, ListItemText,Typography } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PieChartIcon from '@mui/icons-material/PieChart';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
@@ -12,6 +12,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
+import { useNavigate } from "react-router-dom";
 const drawerWidth = 200;
 
 const StyledDrawer = styled(Drawer)(({ theme, open }) => ({
@@ -51,6 +52,7 @@ const StyledDrawer = styled(Drawer)(({ theme, open }) => ({
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
+  const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState("Dashboard");
   const handleDrawer = () => {
     setOpen(!open);
@@ -65,7 +67,7 @@ const Sidebar = () => {
     { text: 'Wallets', icon: <AccountBalanceWalletIcon />, active: activeItem === 'Wallets' },
     { text: 'Security', icon: <SecurityIcon />, active: activeItem === 'Security' },
     { text: 'Data', icon: <DataUsageIcon />, active: activeItem === 'Data' },
-    { text: 'AI', icon: <SmartToyOutlinedIcon />, active: activeItem === 'AI',path:'/ai' },
+    { text: 'AI', icon: <SmartToyOutlinedIcon />, active: activeItem === 'AI',path:'/assistant' },
 
   ];
 
@@ -84,7 +86,10 @@ const Sidebar = () => {
           <ListItem
             button
             key={item.text}
-            onClick={() => setActiveItem(item.text)}
+            onClick={() => {
+              setActiveItem(item.text);
+              navigate(item.path)
+            }}
             sx={{
               // borderRadius: item.active ? 2 : 0,
               borderRadius: item.active ? '20px 0 0 20px' : '4px',
@@ -92,6 +97,7 @@ const Sidebar = () => {
               color: item.active ? '#ffeb3b' : '#fff',
               minHeight: 48,
               justifyContent: open ? 'initial' : 'center',
+              cursor:'pointer',
               px: 2.5,
             }}
           >
@@ -115,6 +121,7 @@ const Sidebar = () => {
             key={item.text}
             onClick={() => {
               setActiveItem(item.text);
+              navigate(item.path)
             }}
             sx={{
               borderRadius: item.active ? 2 : 0,
@@ -122,6 +129,7 @@ const Sidebar = () => {
               color: item.active ? '#ffeb3b' : '#fff',
               minHeight: 48,
               justifyContent: open ? 'initial' : 'center',
+              cursor: 'pointer',
               px: 2.5,
             }}
           >

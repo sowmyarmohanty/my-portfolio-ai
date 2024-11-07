@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid } from '@mui/material'
+import { Box } from '@mui/material'
 import React, { useState } from 'react'
 import AiHistory from '../../components/ai_assistant/ai_history/AiHistory'
 import AiConversation from '../../components/ai_assistant/ai-conversation/AiConversation'
