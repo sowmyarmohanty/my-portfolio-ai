@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid2 as Grid, Box, Typography, Paper, Avatar, IconButton } from '@mui/material';
+import { Grid2 as Grid, Box, Typography, Avatar, IconButton } from '@mui/material';
 import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 import LoopOutlinedIcon from '@mui/icons-material/LoopOutlined';
@@ -104,25 +104,6 @@ const ChatContainer = ({ messages }) => (
 );
 
 const ChartComponent = ({answerBot,containerRef}) => {
-    const messages = [
-        { isUser: true, text: 'Hello!', avatar: 'https://via.placeholder.com/40' },
-        { isUser: false, text: 'Hi there! How can I help you today?', avatar: 'https://via.placeholder.com/40' },
-        { isUser: true, text: 'I need information about your services.', avatar: 'https://via.placeholder.com/40' },
-        { isUser: false, text: 'Sure! We offer a variety of services including...Can you tell me more about your pricing?Can you tell me more about your pricing?Can you tell me more about your pricing?Can you tell me more about your pricing?Can you tell me more about your pricing?', avatar: 'https://via.placeholder.com/40' },
-        { isUser: true, text: 'Can you tell me more about your pricing?', avatar: 'https://via.placeholder.com/40' },
-        { isUser: false, text: 'Our pricing is competitive and depends on the specific services you need. Here’s a general overview...', avatar: 'https://via.placeholder.com/40' },
-        { isUser: true, text: 'Do you offer any discounts for long-term contracts?', avatar: 'https://via.placeholder.com/40' },
-        { isUser: false, text: 'Yes, we do offer discounts for long-term contracts. Let me provide you with more details...', avatar: 'https://via.placeholder.com/40' },
-        { isUser: true, text: 'That sounds great. How can I get started?', avatar: 'https://via.placeholder.com/40' },
-        { isUser: false, text: 'To get started, you can fill out our contact form or give us a call. We’ll be happy to assist you further.', avatar: 'https://via.placeholder.com/40' },
-        { isUser: true, text: 'Thanks for the information. I’ll be in touch soon.', avatar: 'https://via.placeholder.com/40' },
-        { isUser: false, text: 'You’re welcome! Looking forward to hearing from you.', avatar: 'https://via.placeholder.com/40' },
-        { isUser: true, text: 'One last question: Do you have customer support available?', avatar: 'https://via.placeholder.com/40' },
-        { isUser: false, text: 'Absolutely! Our customer support team is available 24/7 to assist you with any queries.', avatar: 'https://via.placeholder.com/40' },
-        { isUser: true, text: 'Perfect. Thanks for all your help!', avatar: 'https://via.placeholder.com/40' },
-        { isUser: false, text: 'My pleasure! Have a great day!', avatar: 'https://via.placeholder.com/40' }
-    ];
-
 
     return (
         <Grid container style={{  overflow: 'hidden',width:'100%' }} >
