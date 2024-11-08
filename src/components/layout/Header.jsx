@@ -140,7 +140,7 @@ const Header = ({ isOpen }) => {
               <TrendingUpIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ fontSize: '1rem' }}>
-              Cryptovia
+              PortfolioIQ
             </Typography>
           </Link>
         </Box>

@@ -15,26 +15,15 @@ const firebaseConfig = {
 };
 */
 const firebaseConfig = {
-  apiKey: "AIzaSyAjhMRlfrdfHQI11qTH7EEkwjwLbyO-Vww",
-  authDomain: "workspace-ui.firebaseapp.com",
-  projectId: "workspace-ui",
-  storageBucket: "workspace-ui.appspot.com",
-  messagingSenderId: "99887960316",
-  appId: "1:99887960316:web:b34fac7b2734e55dc34779",
-  measurementId: "G-TY9N81X663"
+  apiKey: "AIzaSyAg0Qi4qAnCv8WDt9pQfjkrotBrpzesrsM",
+  authDomain: "my-portfolio-ai.firebaseapp.com",
+  projectId: "my-portfolio-ai",
+  storageBucket: "my-portfolio-ai.firebasestorage.app",
+  messagingSenderId: "1018102521023",
+  appId: "1:1018102521023:web:8438f2f6de1a443e497a0a",
+  measurementId: "G-P15M85K3DW"
 };
 const app = firebase.initializeApp(firebaseConfig);
 //const analytics = getAnalytics(app);
 export const auth = firebase.auth(app);
 export const firestore = getFirestore(app);
-/*
-const firebaseConfig = {
-  apiKey: "AIzaSyAjhMRlfrdfHQI11qTH7EEkwjwLbyO-Vww",
-  authDomain: "workspace-ui.firebaseapp.com",
-  projectId: "workspace-ui",
-  storageBucket: "workspace-ui.appspot.com",
-  messagingSenderId: "99887960316",
-  appId: "1:99887960316:web:b34fac7b2734e55dc34779",
-  measurementId: "G-TY9N81X663"
-};
-*/

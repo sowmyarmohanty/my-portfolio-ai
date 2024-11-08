@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 
 import {
   TextField,
@@ -12,6 +12,8 @@ import {
 } from "@mui/material";
 import { Lock, Mail, Person2 } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
+import { useAuth } from '../../context/AuthContext';
+import { firestore } from '../../firebase/firebase';
 
 const Paper = styled("div", {
   name: "MuiCustomPaper", // The component name
@@ -28,6 +30,24 @@ const Paper = styled("div", {
 }));
 
 const Signup = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const { signUp } = useAuth();
+
+  const handleSubmit = async (e) => {
+   // e.preventDefault();
+    try {
+      const userCredential = await signUp(email, password);
+      await firestore.collection('users').doc(userCredential.user.uid).set({
+        name
+      });
+      alert('User registered successfully');
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   const theme = useTheme();
   return (
     <Container maxWidth="sm">
@@ -42,7 +62,7 @@ const Signup = () => {
             Register here!
           </Box>
         </Typography>
-        <form style={{ width: "100%", marginTop: theme.spacing(1) }} noValidate>
+        <form style={{ width: "100%", marginTop: theme.spacing(1) }} noValidate onSubmit={handleSubmit}>
           <Grid2 container spacing={2}>
             <Grid2 size={12}>
               <TextField
@@ -55,6 +75,8 @@ const Signup = () => {
                 name="email"
                 autoComplete="name"
                 autoFocus
+                value={name} 
+                onChange={e => setName(e.target.value)}
                 slotProps={{
                   input: {
                     startAdornment: (
@@ -74,6 +96,8 @@ const Signup = () => {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                value={email} 
+                onChange={e => setEmail(e.target.value)}
                 slotProps={{
                   input: {
                     startAdornment: (
@@ -94,6 +118,7 @@ const Signup = () => {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                value={password} onChange={e => setPassword(e.target.value)}
                 slotProps={{
                   input: {
                     startAdornment: (

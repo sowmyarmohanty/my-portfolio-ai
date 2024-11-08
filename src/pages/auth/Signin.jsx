@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }  from "react";
 
 import {
   TextField,
@@ -13,6 +13,8 @@ import {
 } from "@mui/material";
 import { Lock, Mail } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
+import { useAuth } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Paper = styled("div", {
   name: "MuiPaper", // The component name
@@ -29,6 +31,19 @@ const Paper = styled("div", {
 }));
 
 const Signin = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await login(email, password);
+      navigate('/dashboard');
+    } catch (error) {
+      alert('Invalid credentials');
+    }
+  };
   const theme = useTheme();
   return (
     <Container maxWidth="sm" >
@@ -43,7 +58,7 @@ const Signin = () => {
             Have an account?Please enter your login details
           </Box>
         </Typography>
-        <form style={{ width: "100%", marginTop: theme.spacing(1) }} noValidate>
+        <form style={{ width: "100%", marginTop: theme.spacing(1) }} noValidate onSubmit={handleSubmit}>
           <Grid2 container spacing={2}>
             <Grid2 size={12}>
               <TextField
@@ -56,6 +71,7 @@ const Signin = () => {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                value={email} onChange={e => setEmail(e.target.value)} 
                 slotProps={{
                   input: {
                     startAdornment: (
@@ -76,6 +92,8 @@ const Signin = () => {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                value={password} 
+                onChange={e => setPassword(e.target.value)}
                 slotProps={{
                   input: {
                     startAdornment: (
