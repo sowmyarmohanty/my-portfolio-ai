@@ -60,10 +60,10 @@ const IconBox = ({ sx, children }) => (
 
 const AllocationCard = () => {
     const data = [
-        { name: 'BUSD', value: 36.93, color: '#800080', icon: <AccountBalanceWalletIcon style={{ color: '#800080' }} /> }, // Purple
-        { name: 'SOL', value: 29.55, color: '#FFD700', icon: <SecurityIcon style={{ color: '#FFD700' }} /> }, // Yellow
-        { name: 'ADA', value: 23.76, color: '#FF6347', icon: <AttachMoneyIcon style={{ color: '#FF6347' }} /> }, // Light Red
-        { name: 'BTC', value: 17.22, color: '#ADD8E6', icon: <BitcoinIcon style={{ color: '#ADD8E6' }} /> }, // Light Blue
+        { name: 'Equities', value: 36.93, color: '#800080', icon: <AccountBalanceWalletIcon style={{ color: '#800080' }} /> }, // Purple
+        { name: 'MF', value: 29.55, color: '#FFD700', icon: <SecurityIcon style={{ color: '#FFD700' }} /> }, // Yellow
+        { name: 'Bonds', value: 23.76, color: '#FF6347', icon: <AttachMoneyIcon style={{ color: '#FF6347' }} /> }, // Light Red
+        { name: 'Derivative', value: 17.22, color: '#ADD8E6', icon: <BitcoinIcon style={{ color: '#ADD8E6' }} /> }, // Light Blue
     ];
     const CustomLegend = () => {
 

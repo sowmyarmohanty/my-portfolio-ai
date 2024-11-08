@@ -432,7 +432,7 @@ const PortfolioBalanceCard = () => {
                             width: '150px',
                         }}
                     >
-                        <Typography variant="h6" component="div" sx={{ fontSize: '1.1rem', fontWeight: 'bold', mr: 4 }}>
+                        <Typography variant="h6" component="div" sx={{ fontSize: '1.1rem', fontWeight: 'bold', mr: 6 }}>
                         र36,577.2
                         </Typography>
                         <Box
